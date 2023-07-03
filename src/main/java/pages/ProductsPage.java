@@ -1,7 +1,10 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ProductsPage {
 	
@@ -15,11 +18,21 @@ public class ProductsPage {
 	}
 	
 	//PageActions:
-	public String getPageContainerTitle() {
-		return driver.findElement(pageContainerTitle).getText();
+	public List getListOfProducts() {
+		List<WebElement> listOfProducts = driver.findElements(By.cssSelector("div.inventory_item_name"));
+		for(WebElement e : listOfProducts) {
+			System.out.println("Product name: " + e.getText());
+		}
+		return listOfProducts;
+		
 	}
 	
-	public void getListOfProducts() {
-		System.out.println("List of Products is displayed");
+	public int countOfProducts(List li) {
+		return li.size();
+		
+	}
+	
+	public String getProductsPageTitle() {
+		return driver.findElement(pageContainerTitle).getText();
 	}
 }

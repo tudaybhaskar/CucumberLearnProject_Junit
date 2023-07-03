@@ -34,6 +34,7 @@ public class LoginPageSteps {
 	    Assert.assertTrue(title.contains(expectedtitleName));
 	}
 	
+	
 
 	@When("user enters {string} and {string}")
 	public void user_enters_username_and_password(String uname, String pwd) {
@@ -52,7 +53,7 @@ public class LoginPageSteps {
 	@Then("user is on {string} Page")
 	public void user_is_on_Products_Page(String expectedTitleName) {
 	    // Write code here that turns the phrase above into concrete actions
-		String p_title = productsPage.getPageContainerTitle();
+		String p_title = productsPage.getProductsPageTitle();
 		Assert.assertTrue(p_title.contains(expectedTitleName));
 	}
 

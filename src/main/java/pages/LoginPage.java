@@ -9,7 +9,7 @@ public class LoginPage {
 	//1.By locators : OR
 	private By userName = By.id("user-name");
 	private By password = By.id("password");
-	private By signInButton = By.id("login-butto");
+	private By signInButton = By.id("login-button");
 	
 	//2. Constructor 
 	public LoginPage(WebDriver driver) {
@@ -32,6 +32,14 @@ public class LoginPage {
 	
 	public String getPageTitle() {
 		return driver.getTitle();
+	}
+	
+	public ProductsPage doLogin(String un, String pwd) {
+		System.out.println("Login with : " + un +": pwd: "+ pwd);
+		driver.findElement(userName).sendKeys(un);
+		driver.findElement(password).sendKeys(pwd);
+		driver.findElement(signInButton).click();
+		return new ProductsPage(driver);
 	}
 	
 }
