@@ -20,28 +20,55 @@
     <cucumber.version>6.9.0</cucumber.version>
     <junit.version>4.13.1</junit.version>
   </properties>
+  
+  <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
   <dependencies>
 	<dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>${cucumber.version}</version>
-      <scope>test</scope>
+      	<groupId>io.cucumber</groupId>
+      	<artifactId>cucumber-java</artifactId>
+      	<version>${cucumber.version}</version>
+      	<scope>test</scope>
     </dependency>
-    
+    <dependency>
+		<groupId>io.github.bonigarcia</groupId>
+		<artifactId>webdrivermanager</artifactId>
+		<version>4.2.2</version>
+	</dependency>
     
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
+		<groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>${junit.version}</version>
+	    <scope>test</scope>
     </dependency>
     
     <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-junit</artifactId>
-      <version>${cucumber.version}</version>
-      <scope>test</scope>
+		<groupId>io.cucumber</groupId>
+	 	<artifactId>cucumber-junit</artifactId>
+	    <version>${cucumber.version}</version>
+	      <scope>test</scope>
+    </dependency>
+    <dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>3.141.59</version>
+	</dependency>
+    <dependency>
+	    <groupId>tech.grasshopper</groupId>
+	    <artifactId>extentreports-cucumber6-adapter</artifactId>
+	    <version>2.5.0</version>
+	    <scope>test</scope>
+	</dependency>
+ 	<dependency>
+        <groupId>com.github.ralfstuckert.pdfbox-layout</groupId>
+        <artifactId>pdfbox2-layout</artifactId>
+        <version>1.0.1</version>
     </dependency>
   </dependencies>
 
