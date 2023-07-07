@@ -107,9 +107,42 @@
 				   <useUnlimitedThreads>false</useUnlimitedThreads>
 			   </configuration>
 		</plugin>
-		
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-failsafe-plugin -->
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-failsafe-plugin</artifactId>
+		    <version>3.0.0-M5</version>
+		    <executions>
+				<execution>
+					<goals>
+						<goal>integration-test</goal>
+					</goals>
+					<configuration>
+						<!-- To add any exclusions if required-->
+						<excludes>
+							<exclude></exclude>
+						</excludes>
+						<includes>
+							<!-- To execute feature files with a single runner-->
+							<include>**/SauceDemoTestRunner.java</include>
+							<!-- To Execute feature files with Mutlipe runners-->
+							<!--<include>**/*Runner.java</include>-->
+						</includes>
+						<!-- To execute parallel or combination option-->
+						<parallel>methods</parallel>
+						<threadCount>4</threadCount>
+						<perCoreThreadCount>true</perCoreThreadCount>
+						
+						<!-- to execute using forking or combination-->
+						<!-- <forkCount>2</forkcount>
+							 <reuseForks>true</reuseForks>
+							 <reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory>-->
+					</configuration>
+				</execution>
+			</executions>
+		    	
+		</plugin>
 
-		
 	</plugins>
   </build>
 </project>
