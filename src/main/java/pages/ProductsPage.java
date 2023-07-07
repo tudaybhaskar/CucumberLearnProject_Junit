@@ -10,7 +10,7 @@ public class ProductsPage {
 	
 	private WebDriver driver;
 	//1 By Locators
-	private By pageContainerTitle = By.cssSelector(".header_secondary_container span.title");
+	private By pageContainerTitle = By.cssSelector(".header_secondary_container span.titl");
 	
 	//2. constructor
 	public ProductsPage(WebDriver driver) {
