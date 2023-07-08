@@ -1,4 +1,4 @@
-package stepDefinitions;
+package parallel;
 
 import java.util.List;
 import java.util.Map;
