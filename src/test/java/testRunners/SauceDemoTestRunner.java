@@ -12,9 +12,8 @@ import io.cucumber.plugin.Plugin;
 		glue = {"stepDefinitions","AppHooks"},
 		plugin = {"pretty",
 				  "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-				  "timeline:test-output-thread/"
-				
-				},
+				  "timeline:test-output-thread/"},
+		//tags = {"not @Skip"},
 		monochrome = true
 		)
 public class SauceDemoTestRunner {
